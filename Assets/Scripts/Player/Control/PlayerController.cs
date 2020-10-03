@@ -7,8 +7,7 @@ namespace Player.Control
     [RequireComponent(typeof(NavMeshAgent))]
     internal sealed class PlayerController : MonoBehaviour
     {
-        private const string MoveTrigger = "Move";
-        private const string StopTrigger = "Stop";
+        private const string MoveBool = "IsMoving";
         private const string Horizontal = "Horizontal";
         private const string Vertical = "Vertical";
         
@@ -19,8 +18,7 @@ namespace Player.Control
         private Transform _transform;
         private NavMeshAgent _agent;
 
-        private int _moveHash;
-        private int _stopHash;
+        private int _moveBool;
         private bool _isMoving;
 
         private float _horizontal;
@@ -32,8 +30,7 @@ namespace Player.Control
 
             _transform = transform;
 
-            _moveHash = Animator.StringToHash(MoveTrigger);
-            _stopHash = Animator.StringToHash(StopTrigger);
+            _moveBool = Animator.StringToHash(MoveBool);
         }
 
         private void Update()
@@ -52,10 +49,10 @@ namespace Player.Control
                 }
             }
 
-            if (_isMoving && _agent.remainingDistance < _animationStopDistance)
+            if (_isMoving && _agent.remainingDistance < _animationStopDistance || _agent.isStopped)
             {
-                _animator.SetTrigger(_stopHash);
                 _isMoving = false;
+                _animator.SetBool(_moveBool, _isMoving);
             }
         }
 
@@ -67,8 +64,8 @@ namespace Player.Control
 
             if (!_isMoving)
             {
-                _animator.SetTrigger(_moveHash);
                 _isMoving = true;
+                _animator.SetBool(_moveBool, _isMoving);
             }
         }
     }
