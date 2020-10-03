@@ -6,7 +6,7 @@ using UnityEngine;
 #pragma warning disable CS0649
 namespace Scripts.Services
 {
-    public class Timer : MonoBehaviour
+    internal sealed class Timer : MonoBehaviour
     {
         private class ActionWithTime : IComparable<ActionWithTime>
         {

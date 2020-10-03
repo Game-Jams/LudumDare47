@@ -5,12 +5,11 @@ using UnityEngine;
 namespace Interactions
 {
     [RequireComponent(typeof(Collider))]
-    internal sealed class InteractionObject : MonoBehaviour
+    internal abstract class InteractionObjectBehaviour : MonoBehaviour
     {
         [SerializeField] private GameObject _activityIndicator;
-        [SerializeField] private InteractionData _interactionData;
 
-        private PlayerInventory _playerInventory;
+        protected PlayerInventory _playerInventory;
 
         private bool _isActive;
 
@@ -33,7 +32,7 @@ namespace Interactions
             {
                 _playerInventory = playerInventory;
 
-                TryToActivate(playerInventory);
+                ActivateIfNeeded(playerInventory);
             }
         }
 
@@ -42,9 +41,13 @@ namespace Interactions
             SetActive(false);
         }
 
-        private void TryToActivate(PlayerInventory playerInventory)
+        protected abstract bool NeedActivation(PlayerInventory playerInventory);
+
+        protected abstract void Interact();
+
+        private void ActivateIfNeeded(PlayerInventory playerInventory)
         {
-            if (_interactionData.ItemForActivate == playerInventory.Item)
+            if (NeedActivation(playerInventory))
             {
                 SetActive(true);
             }
@@ -54,13 +57,6 @@ namespace Interactions
         {
             _isActive = isActive;
             _activityIndicator.SetActive(isActive);
-        }
-
-        private void Interact()
-        {
-            _playerInventory.Item = _interactionData.ItemForReceive;
-
-            Destroy(gameObject);
         }
     }
 }
