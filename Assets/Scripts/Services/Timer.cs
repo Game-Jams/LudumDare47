@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+#pragma warning disable CS0649
 namespace Scripts.Services
 {
     public class Timer : MonoBehaviour
@@ -21,14 +22,13 @@ namespace Scripts.Services
             public int CompareTo(ActionWithTime other) => Time.CompareTo(other.Time);
         }
 
-        [SerializeField]
-        private TMP_Text _textElement;
-
         public static Timer Instance { get; private set; }
+
+        [SerializeField] private TMP_Text _textElement;
 
         private List<ActionWithTime> _actionsWithTime = new List<ActionWithTime>();
 
-        private float _currentTime = 0.0f;
+        private float _currentTime;
 
         private void Awake()
         {
@@ -38,7 +38,7 @@ namespace Scripts.Services
         private void Update()
         {
             _currentTime += Time.deltaTime;
-            _textElement.text = TimeSpan.FromSeconds(_currentTime).ToString("m':'s");
+            _textElement.text = TimeSpan.FromSeconds(_currentTime).ToString("mm':'ss");
             InvokePlannedActions();
         }
 
