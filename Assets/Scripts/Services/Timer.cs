@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.Rendering.UI;
-using UnityEngine.UI;
 
 namespace Scripts.Services
 {
@@ -31,9 +25,9 @@ namespace Scripts.Services
 
         private void CheckTime()
         {
-            for(int i = 0; i < _actionsWithTime.Count; i++)
+            for (int i = 0; i < _actionsWithTime.Count; i++)
             {
-                if(_actionsWithTime[i].Time <= _currentTime)
+                if (_actionsWithTime[i].Time <= _currentTime)
                 {
                     _actionsWithTime[i].Action?.Invoke();
                     _actionsWithTime.RemoveAt(i);
