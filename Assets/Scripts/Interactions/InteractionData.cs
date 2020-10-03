@@ -2,6 +2,7 @@
 using Items;
 using UnityEngine;
 
+#pragma warning disable CS0649
 namespace Interactions
 {
     [Serializable]

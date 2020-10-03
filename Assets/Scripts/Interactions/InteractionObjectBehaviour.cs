@@ -4,11 +4,12 @@ using UnityEngine;
 #pragma warning disable CS0649
 namespace Interactions
 {
-    [RequireComponent(typeof(SphereCollider))]
-    internal sealed class InteractionObject : MonoBehaviour
+    [RequireComponent(typeof(Collider))]
+    internal abstract class InteractionObjectBehaviour : MonoBehaviour
     {
         [SerializeField] private GameObject _activityIndicator;
-        [SerializeField] private InteractionData _interactionData;
+
+        protected PlayerInventory _playerInventory;
 
         private bool _isActive;
 
@@ -17,11 +18,21 @@ namespace Interactions
             SetActive(false);
         }
 
+        private void Update()
+        {
+            if (_isActive && Input.GetKeyDown(KeyCode.F))
+            {
+                Interact();
+            }
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out PlayerInventory playerInventory))
             {
-                TryToActivate(playerInventory);
+                _playerInventory = playerInventory;
+
+                ActivateIfNeeded(playerInventory);
             }
         }
 
@@ -30,9 +41,13 @@ namespace Interactions
             SetActive(false);
         }
 
-        private void TryToActivate(PlayerInventory playerInventory)
+        protected abstract bool NeedActivation(PlayerInventory playerInventory);
+
+        protected abstract void Interact();
+
+        private void ActivateIfNeeded(PlayerInventory playerInventory)
         {
-            if (_interactionData.ItemForActivate == playerInventory.Item)
+            if (NeedActivation(playerInventory))
             {
                 SetActive(true);
             }
