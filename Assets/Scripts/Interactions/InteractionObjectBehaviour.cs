@@ -32,7 +32,7 @@ namespace Interactions
             {
                 _playerInventory = playerInventory;
 
-                ActivateIfNeeded(playerInventory);
+                ChangeActiveState();
             }
         }
 
@@ -45,12 +45,9 @@ namespace Interactions
 
         protected abstract void Interact();
 
-        private void ActivateIfNeeded(PlayerInventory playerInventory)
+        protected void ChangeActiveState()
         {
-            if (NeedActivation(playerInventory))
-            {
-                SetActive(true);
-            }
+            SetActive(NeedActivation(_playerInventory));
         }
 
         private void SetActive(bool isActive)
