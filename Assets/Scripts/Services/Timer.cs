@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Rendering.UI;
+using UnityEngine.UI;
 
 namespace Scripts.Services
 {
@@ -12,7 +14,8 @@ namespace Scripts.Services
     {
         public static Timer Instance { get; private set; }
 
-        private SortedList<float, Action> _actionsWithTime = new SortedList<float, Action>();
+        private List<ActionWithTime> _actionsWithTime = new List<ActionWithTime>();
+        [SerializeField]
         private float _currentTime = 0.0f;
 
         private void Awake()
@@ -28,14 +31,17 @@ namespace Scripts.Services
 
         private void CheckTime()
         {
-            foreach (float actionTime in _actionsWithTime.Keys)
+            for(int i = 0; i < _actionsWithTime.Count; i++)
             {
-                if (actionTime <= _currentTime)
+                if(_actionsWithTime[i].Time <= _currentTime)
                 {
-                    _actionsWithTime[actionTime]?.Invoke();
-                    _actionsWithTime.Remove(actionTime);
+                    _actionsWithTime[i].Action?.Invoke();
+                    _actionsWithTime.RemoveAt(i);
                 }
-                return;
+                else
+                {
+                    break;
+                }
             }
         }
 
@@ -43,7 +49,8 @@ namespace Scripts.Services
         {
             if (action != null)
             {
-                _actionsWithTime.Add(time, action);
+                _actionsWithTime.Add(new ActionWithTime(time, action));
+                _actionsWithTime.Sort();
             }
         }
 
@@ -51,8 +58,23 @@ namespace Scripts.Services
         {
             if (action != null)
             {
-                _actionsWithTime.Add(_currentTime + time, action);
+                _actionsWithTime.Add(new ActionWithTime(_currentTime + time, action));
+                _actionsWithTime.Sort();
             }
+        }
+
+        private class ActionWithTime : IComparable<ActionWithTime>
+        {
+            public float Time { get; }
+            public Action Action { get; }
+
+            public ActionWithTime(float time, Action action)
+            {
+                Time = time;
+                Action = action;
+            }
+
+            public int CompareTo(ActionWithTime other) => Time.CompareTo(other.Time);
         }
     }
 }
