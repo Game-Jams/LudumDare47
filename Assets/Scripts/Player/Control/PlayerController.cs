@@ -7,6 +7,8 @@ namespace Player.Control
     [RequireComponent(typeof(NavMeshAgent))]
     internal sealed class PlayerController : MonoBehaviour
     {
+        [SerializeField] private float _distance;
+
         private Transform _transform;
         private NavMeshAgent _agent;
 
@@ -30,7 +32,7 @@ namespace Player.Control
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
 
-            Vector3 direction = new Vector3(-horizontal, 0f, -vertical).normalized;
+            Vector3 direction = new Vector3(-horizontal, 0f, -vertical).normalized * _distance;
 
             _agent.SetDestination(_transform.position + direction);
         }
