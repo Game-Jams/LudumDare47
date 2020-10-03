@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2716068366518198821}
   - component: {fileID: 2716068366518198819}
   - component: {fileID: 2716068366518198818}
+  - component: {fileID: 6427495105727817778}
   - component: {fileID: 493664363465971205}
   - component: {fileID: 1131172971697553544}
   m_Layer: 0
@@ -72,6 +73,18 @@ MonoBehaviour:
   _animator: {fileID: 2657750809532098012}
   _animationStopDistance: 0.5
   _distance: 0.6
+--- !u!114 &6427495105727817778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716068366518198820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8c8a152b7fd46249b490df241c7508d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &493664363465971205
 SphereCollider:
   m_ObjectHideFlags: 0
