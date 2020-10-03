@@ -12,8 +12,8 @@ namespace Scripts.Services
     {
         public static Timer Instance { get; private set; }
 
-        private SortedList<float, Action> _triggersWithTime = new SortedList<float, Action>();
-        private float _timer = 0.0f;
+        private SortedList<float, Action> _actionsWithTime = new SortedList<float, Action>();
+        private float _currentTime = 0.0f;
 
         private void Awake()
         {
@@ -22,25 +22,36 @@ namespace Scripts.Services
 
         private void Update()
         {
-            _timer += Time.deltaTime;
+            _currentTime += Time.deltaTime;
             CheckTime();
         }
 
         private void CheckTime()
         {
-            int index = _triggersWithTime.IndexOfKey(_timer);
-            if (index > -1)
+            foreach (float actionTime in _actionsWithTime.Keys)
             {
-                _triggersWithTime[index]?.Invoke();
-                _triggersWithTime.RemoveAt(index);
+                if (actionTime <= _currentTime)
+                {
+                    _actionsWithTime[actionTime]?.Invoke();
+                    _actionsWithTime.Remove(actionTime);
+                }
+                return;
             }
         }
 
-        public void RegisterTrigger(float time, Action trigger)
+        public void RegisterActionAbsoluteTime(float time, Action action)
         {
-            if (trigger != null && !_triggersWithTime.ContainsKey(time))
+            if (action != null)
             {
-                _triggersWithTime.Add(_timer + time, trigger);
+                _actionsWithTime.Add(time, action);
+            }
+        }
+
+        public void RegisterActionRelativeTime(float time, Action action)
+        {
+            if (action != null)
+            {
+                _actionsWithTime.Add(_currentTime + time, action);
             }
         }
     }
