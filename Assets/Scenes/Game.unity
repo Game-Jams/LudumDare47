@@ -5964,7 +5964,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269675541}
-  m_LocalRotation: {x: 0.044026162, y: 0.92690855, z: -0.35446936, w: 0.11512484}
+  m_LocalRotation: {x: 0.044026148, y: 0.92690855, z: -0.35446936, w: 0.11512478}
   m_LocalPosition: {x: -7.96, y: 30.15, z: 31.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -39054,7 +39054,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593397504}
-  m_LocalRotation: {x: 0.044026162, y: 0.92690855, z: -0.35446936, w: 0.11512484}
+  m_LocalRotation: {x: 0.044026148, y: 0.92690855, z: -0.35446936, w: 0.11512478}
   m_LocalPosition: {x: -7.96, y: 30.15, z: 31.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -55419,6 +55419,10 @@ PrefabInstance:
       propertyPath: _interactionData.Array.data[3]._alwaysIsInteract
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4007299605537867236, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: _npcInteractionData
+      value: 
+      objectReference: {fileID: 11400000, guid: 87cfbcecd23d4cf449ef77c5fdd839a7, type: 2}
     - target: {fileID: 5400777723076213053, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0

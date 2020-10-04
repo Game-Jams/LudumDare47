@@ -8,43 +8,47 @@ namespace NPC
 {
     internal sealed class Npc : InteractionObjectBehaviour
     {
+        [Space(5f)]
+        [SerializeField] private NpcInteractionData _npcInteractionData;
+
+        [Space(5f)]
         [SerializeField] private TextMeshPro _dialogText;
         [SerializeField] private GameObject _dialogObject;
 
-        [Space(10f)]
-        [SerializeField] private InteractionData[] _interactionData;
-
         private int _currentStateIndex;
 
-        private InteractionData InteractionData => _interactionData.Length == _currentStateIndex ? default : _interactionData[_currentStateIndex];
+        private InteractionData[] Interactions => _npcInteractionData.Interactions;
+
+        private InteractionData Interaction =>
+            Interactions.Length == _currentStateIndex ? default : Interactions[_currentStateIndex];
 
         protected override bool NeedActivation(PlayerInventory playerInventory)
         {
-            bool alwaysActive = InteractionData.AlwaysIsInteract;
-            bool playerHasItem = InteractionData.ItemForInteract == playerInventory.Item;
+            bool alwaysActive = Interaction.AlwaysIsInteract;
+            bool playerHasItem = Interaction.ItemForInteract == playerInventory.Item;
 
             return alwaysActive || playerHasItem;
         }
 
         protected override bool HasCanInteract(PlayerInventory playerInventory)
         {
-            return InteractionData.AlwaysIsInteract || InteractionData.ItemForInteract == playerInventory.Item;
+            return Interaction.AlwaysIsInteract || Interaction.ItemForInteract == playerInventory.Item;
         }
 
         protected override void Interact()
         {
-            Debug.Log($"InteractionType: {InteractionData.InteractionType}");
+            Debug.Log($"InteractionType: {Interaction.InteractionType}");
 
-            if (!InteractionData.AlwaysIsInteract)
+            if (!Interaction.AlwaysIsInteract)
             {
                 _playerInventory.Item = default;
-                Debug.Log($"I took the item: {InteractionData.ItemForInteract}");
+                Debug.Log($"I took the item: {Interaction.ItemForInteract}");
             }
 
-            if (InteractionData.HasItemForReceive)
+            if (Interaction.HasItemForReceive)
             {
-                _playerInventory.Item = InteractionData.ItemForReceive;
-                Debug.Log($"I gave the item: {InteractionData.ItemForReceive}");
+                _playerInventory.Item = Interaction.ItemForReceive;
+                Debug.Log($"I gave the item: {Interaction.ItemForReceive}");
             }
 
             UpdateDialog();
@@ -63,13 +67,13 @@ namespace NPC
 
         private void UpdateDialog()
         {
-            bool dialogIsActive = InteractionData.HasMessage && _inInteractiveZone;
+            bool dialogIsActive = Interaction.HasMessage && _inInteractiveZone;
 
             _dialogObject.SetActive(dialogIsActive);
 
             if (dialogIsActive)
             {
-                _dialogText.text = InteractionData.Message;
+                _dialogText.text = Interaction.Message;
             }
         }
     }
