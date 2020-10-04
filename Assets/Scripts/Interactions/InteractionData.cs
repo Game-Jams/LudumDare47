@@ -15,16 +15,15 @@ namespace Interactions
         [SerializeField] private bool _hasMessage;
 
         [Space(5f)]
-        [SerializeField] private bool _alwaysInteract;
-        [SerializeField] private bool _hasItemForReceive;
-
-        [Space(5f)]
-        [HideIf("_alwaysInteract")]
+        [HideIf("_alwaysIsInteract")]
         [SerializeField] private ItemType _itemForInteract;
 
-        [Space(5f)]
         [ShowIf("_hasItemForReceive")]
         [SerializeField] private ItemType _itemForReceive;
+
+        [Space(5f)]
+        [SerializeField] private bool _alwaysIsInteract;
+        [SerializeField] private bool _hasItemForReceive;
 
         [Space(10f)] 
         [ShowIf("_hasMessage")] 
@@ -36,7 +35,7 @@ namespace Interactions
         public ItemType ItemForInteract => _itemForInteract;
         public ItemType ItemForReceive => _itemForReceive;
 
-        public bool AlwaysInteract => _alwaysInteract;
+        public bool AlwaysIsInteract => _alwaysIsInteract;
         public bool HasItemForReceive => _hasItemForReceive;
         public bool HasMessage => _hasMessage;
 

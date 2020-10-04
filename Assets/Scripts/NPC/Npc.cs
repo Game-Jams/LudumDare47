@@ -20,7 +20,7 @@ namespace NPC
 
         protected override bool NeedActivation(PlayerInventory playerInventory)
         {
-            bool alwaysActive = InteractionData.AlwaysInteract;
+            bool alwaysActive = InteractionData.AlwaysIsInteract;
             bool playerHasItem = InteractionData.ItemForInteract == playerInventory.Item;
 
             return alwaysActive || playerHasItem;
@@ -28,14 +28,14 @@ namespace NPC
 
         protected override bool HasCanInteract(PlayerInventory playerInventory)
         {
-            return InteractionData.AlwaysInteract || InteractionData.ItemForInteract == playerInventory.Item;
+            return InteractionData.AlwaysIsInteract || InteractionData.ItemForInteract == playerInventory.Item;
         }
 
         protected override void Interact()
         {
             Debug.Log($"InteractionType: {InteractionData.InteractionType}");
 
-            if (!InteractionData.AlwaysInteract)
+            if (!InteractionData.AlwaysIsInteract)
             {
                 _playerInventory.Item = default;
                 Debug.Log($"I took the item: {InteractionData.ItemForInteract}");

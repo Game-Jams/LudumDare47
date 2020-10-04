@@ -4,13 +4,13 @@ using UnityEngine;
 #pragma warning disable CS0649
 namespace Interactions
 {
-    internal sealed class Item : InteractionObjectBehaviour
+    internal sealed class SimpleInteraction : InteractionObjectBehaviour
     {
         [SerializeField] private InteractionData _interactionData;
 
         protected override bool NeedActivation(PlayerInventory playerInventory)
         {
-            return true;
+            return _interactionData.AlwaysIsInteract || _interactionData.ItemForInteract == playerInventory.Item;
         }
 
         protected override bool HasCanInteract(PlayerInventory playerInventory)
