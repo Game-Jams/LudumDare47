@@ -6,6 +6,7 @@
         Tool,
         Money,
         Mirror,
-        Revolver
+        Revolver,
+        Any
     }
 }

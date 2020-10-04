@@ -6,22 +6,25 @@ namespace Interactions
 {
     internal sealed class SimpleInteraction : InteractionObjectBehaviour
     {
-        [SerializeField] private InteractionData _interactionData;
+        [SerializeField] private InteractionData _interaction;
 
         protected override bool NeedActivation(PlayerInventory playerInventory)
         {
-            return _interactionData.AlwaysIsInteract || _interactionData.ItemForInteract == playerInventory.Item;
+            return _interaction.AlwaysIsInteract || _interaction.ItemForInteract == playerInventory.Item;
         }
 
         protected override bool HasCanInteract(PlayerInventory playerInventory)
         {
-            return _interactionData.ItemForInteract == playerInventory.Item;
+            return _interaction.AlwaysIsInteract || _interaction.ItemForInteract == playerInventory.Item;
         }
 
         protected override void Interact()
         {
-            _playerInventory.Item = _interactionData.ItemForReceive;
-
+            if (_interaction.HasItemForReceive)
+            {
+                _playerInventory.Item = _interaction.ItemForReceive;
+            }
+            
             Destroy(gameObject);
         }
     }
