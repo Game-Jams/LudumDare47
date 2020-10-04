@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using Observable;
 using TMPro;
 using UnityEngine;
 
 #pragma warning disable CS0649
 namespace Scripts.Services
 {
-    internal sealed class Timer : MonoBehaviour
+    internal sealed class Timer : MonoBehaviour, ISessionStartedListener
     {
         private class ActionWithTime : IComparable<ActionWithTime>
         {
@@ -27,15 +28,28 @@ namespace Scripts.Services
         [SerializeField] private TMP_Text _textElement;
 
         private List<ActionWithTime> _actionsWithTime = new List<ActionWithTime>();
+        private Action _update;
 
         private float _currentTime;
 
         private void Awake()
         {
             Instance = this;
+
+            this.Subscribe<ISessionStartedListener>();
         }
 
         private void Update()
+        {
+            _update?.Invoke();
+        }
+
+        private void OnDestroy()
+        {
+            this.Unsubscribe<ISessionStartedListener>();
+        }
+
+        private void UpdateIteration()
         {
             _currentTime += Time.deltaTime;
             _textElement.text = TimeSpan.FromSeconds(_currentTime).ToString("mm':'ss");
@@ -76,5 +90,9 @@ namespace Scripts.Services
             }
         }
 
+        void IObserver<ISessionStartedListener, EmptyParams>.Completed(EmptyParams parameters)
+        {
+            _update += UpdateIteration;
+        }
     }
 }
