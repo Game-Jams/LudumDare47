@@ -11,7 +11,7 @@ namespace Interactions
 
         protected PlayerInventory _playerInventory;
 
-        protected bool _isInteractive;
+        protected bool _inInteractiveZone;
 
         private void Awake()
         {
@@ -20,7 +20,7 @@ namespace Interactions
 
         private void Update()
         {
-            if (_isInteractive && Input.GetKeyDown(KeyCode.F))
+            if (_inInteractiveZone && HasCanInteract(_playerInventory) && Input.GetKeyDown(KeyCode.F))
             {
                 Interact();
             }
@@ -30,6 +30,7 @@ namespace Interactions
         {
             if (other.TryGetComponent(out PlayerInventory playerInventory))
             {
+                _inInteractiveZone = true;
                 _playerInventory = playerInventory;
 
                 ChangeActiveState();
@@ -38,10 +39,14 @@ namespace Interactions
 
         private void OnTriggerExit(Collider other)
         {
+            _inInteractiveZone = false;
+
             SetActive(false);
         }
 
         protected abstract bool NeedActivation(PlayerInventory playerInventory);
+
+        protected abstract bool HasCanInteract(PlayerInventory playerInventory);
 
         protected abstract void Interact();
 
@@ -52,7 +57,6 @@ namespace Interactions
 
         protected virtual void SetActive(bool isActive)
         {
-            _isInteractive = isActive;
             _activityIndicator.SetActive(isActive);
         }
     }

@@ -20,20 +20,25 @@ namespace NPC
 
         protected override bool NeedActivation(PlayerInventory playerInventory)
         {
-            bool alwaysActive = InteractionData.AlwaysIsActive;
-            bool playerHasItem = InteractionData.ItemForActivate == playerInventory.Item;
+            bool alwaysActive = InteractionData.AlwaysInteract;
+            bool playerHasItem = InteractionData.ItemForInteract == playerInventory.Item;
 
             return alwaysActive || playerHasItem;
+        }
+
+        protected override bool HasCanInteract(PlayerInventory playerInventory)
+        {
+            return InteractionData.AlwaysInteract || InteractionData.ItemForInteract == playerInventory.Item;
         }
 
         protected override void Interact()
         {
             Debug.Log($"InteractionType: {InteractionData.InteractionType}");
 
-            if (InteractionData.ItemForActivate != default)
+            if (!InteractionData.AlwaysInteract)
             {
                 _playerInventory.Item = default;
-                Debug.Log($"I took the item: {InteractionData.ItemForActivate}");
+                Debug.Log($"I took the item: {InteractionData.ItemForInteract}");
             }
 
             if (InteractionData.HasItemForReceive)
@@ -58,8 +63,7 @@ namespace NPC
 
         private void UpdateDialog()
         {
-            bool hasDialog = InteractionData.InteractionType == InteractionType.Dialog;
-            bool dialogIsActive = hasDialog && _isInteractive;
+            bool dialogIsActive = InteractionData.HasMessage && _inInteractiveZone;
 
             _dialogObject.SetActive(dialogIsActive);
 
