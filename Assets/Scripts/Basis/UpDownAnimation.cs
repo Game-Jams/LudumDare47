@@ -1,7 +1,4 @@
-﻿using Scripts.Services;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 #pragma warning disable CS0649
@@ -40,7 +37,7 @@ namespace Scripts.Basis
 
         private void MoveToTarget()
         {
-            transform.position = Vector3.Lerp(_startPosition, _targetPosition, EasingInOutSine(_currentTime));
+            transform.position = Vector3.Lerp(_startPosition, _targetPosition, EasingInOutSine(_currentTime / _amplitude));
             _currentTime += Time.deltaTime;
         }
 
