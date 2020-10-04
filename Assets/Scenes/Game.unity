@@ -5964,7 +5964,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269675541}
-  m_LocalRotation: {x: 0.044026148, y: 0.92690855, z: -0.35446936, w: 0.11512478}
+  m_LocalRotation: {x: 0.044026162, y: 0.92690855, z: -0.35446936, w: 0.11512484}
   m_LocalPosition: {x: -7.96, y: 30.15, z: 31.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -39054,7 +39054,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593397504}
-  m_LocalRotation: {x: 0.044026148, y: 0.92690855, z: -0.35446936, w: 0.11512478}
+  m_LocalRotation: {x: 0.044026162, y: 0.92690855, z: -0.35446936, w: 0.11512484}
   m_LocalPosition: {x: -7.96, y: 30.15, z: 31.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -55172,9 +55172,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tumbleweed
       objectReference: {fileID: 0}
+    - target: {fileID: 1648488053207210517, guid: de8f188baa20f104bbfeb44c9023bd91, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1648488053207210518, guid: de8f188baa20f104bbfeb44c9023bd91, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1648488053207210518, guid: de8f188baa20f104bbfeb44c9023bd91, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1648488053207210519, guid: de8f188baa20f104bbfeb44c9023bd91, type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
@@ -55545,9 +55553,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1849300240741222834, guid: 3e28af45563eb764894caa5e2226c9a8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2368348149673424242, guid: 3e28af45563eb764894caa5e2226c9a8, type: 3}
       propertyPath: m_Name
       value: Wind
+      objectReference: {fileID: 0}
+    - target: {fileID: 2368348149673424242, guid: 3e28af45563eb764894caa5e2226c9a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8708711200131340547, guid: 3e28af45563eb764894caa5e2226c9a8, type: 3}
       propertyPath: m_LocalPosition.x
