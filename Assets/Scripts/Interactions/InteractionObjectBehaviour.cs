@@ -11,7 +11,7 @@ namespace Interactions
 
         protected PlayerInventory _playerInventory;
 
-        private bool _isActive;
+        protected bool _isInteractive;
 
         private void Awake()
         {
@@ -20,7 +20,7 @@ namespace Interactions
 
         private void Update()
         {
-            if (_isActive && Input.GetKeyDown(KeyCode.F))
+            if (_isInteractive && Input.GetKeyDown(KeyCode.F))
             {
                 Interact();
             }
@@ -50,9 +50,9 @@ namespace Interactions
             SetActive(NeedActivation(_playerInventory));
         }
 
-        private void SetActive(bool isActive)
+        protected virtual void SetActive(bool isActive)
         {
-            _isActive = isActive;
+            _isInteractive = isActive;
             _activityIndicator.SetActive(isActive);
         }
     }

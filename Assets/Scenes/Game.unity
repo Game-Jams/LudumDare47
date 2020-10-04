@@ -55187,6 +55187,72 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4007299605537867236, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: _interactionData.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007299605537867236, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: _interactionData.Array.data[2]._interactionType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007299605537867236, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: _interactionData.Array.data[2]._alwaysIsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007299605537867236, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: _interactionData.Array.data[2]._withoutItemForReceive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007299605537867236, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: _interactionData.Array.data[2]._message
+      value: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0437\u0430 \u043F\u043E\u043A\u0443\u043F\u043A\u0443,
+        \u043D\u0435 \u043F\u043E\u0436\u0430\u043B\u0435\u0435\u0448\u044C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007299605537867236, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: _interactionData.Array.data[3]._interactionType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007299605537867236, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: _interactionData.Array.data[3]._alwaysIsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007299605537867236, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: _interactionData.Array.data[3]._withoutItemForReceive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007299605537867236, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: _interactionData.Array.data[3]._message
+      value: "\u0417\u0430\u0445\u043E\u0434\u0438 \u043D\u0430 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0439
+        \u043D\u0435\u0434\u0435\u043B\u0435"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400777723076213053, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400777723076213053, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400777723076213053, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400777723076213053, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400777723076213053, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840494050858260271, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113449744455247723, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
+      propertyPath: m_Name
+      value: DialogText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
 --- !u!1001 &2716068365072358550
