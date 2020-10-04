@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+#pragma warning disable CS0649
 namespace NPC
 {
     internal sealed class Npc : MonoBehaviour
@@ -27,7 +28,7 @@ namespace NPC
             _state = NpcState.AlternativeAction;
 
             _npcInteraction.enabled = false;
-            _actionSequence.InvokeAlternativeAction();
+            _actionSequence.InvokeRightAction();
         }
     }
 }

@@ -1,11 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace GameActions
+﻿namespace GameActions
 {
     public enum GameAction
     {
-        
+        None,
+        StagecoachRepaired,
+        StagecoachFinished,
+        RichGuyStated,
+        RichGuySentToBarberShop,
+        RichGuySentToProstitute,
+        BanditStated,
+        SheriffStated,
     }
 }
