@@ -18,6 +18,9 @@ public class Shooting : MonoBehaviour, IObserverNotify<IGameActionInvokedListene
         _targetAnimator.transform.rotation =
             Quaternion.LookRotation(transform.position - _targetAnimator.transform.position, Vector3.up);
         
+        transform.rotation =
+            Quaternion.LookRotation(_targetAnimator.transform.position - transform.position, Vector3.up);
+        
         foreach (ParticleSystem system in _systems)
         {
             system.Play();
@@ -36,6 +39,6 @@ public class Shooting : MonoBehaviour, IObserverNotify<IGameActionInvokedListene
 
     public void TriggerGrannySave()
     {
-      this.NotifyListeners<IGameActionInvokedListener, GameActionParams>(new GameActionParams(GameAction.BanditKilled));  
+        this.NotifyListeners<IGameActionInvokedListener, GameActionParams>(new GameActionParams(GameAction.BanditKilled));  
     } 
 }
