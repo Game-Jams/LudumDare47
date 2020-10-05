@@ -1,14 +1,18 @@
-﻿using Observable;
+﻿using GameActions;
+using Observable;
 using UnityEngine;
 using UnityEngine.Playables;
 
 public class MenuButtons : MonoBehaviour,
     ISessionStartedListener,
+    IGameActionInvokedListener,
     IObserverNotifyEmpty<ISessionStartedListener>
 {
     [SerializeField] private CanvasGroup _gameHUD;
     [SerializeField] private CanvasGroup _mainMenu;
     [SerializeField] private CanvasGroup _storyLayer;
+    [SerializeField] private CanvasGroup _winScreen;
+    [SerializeField] private CanvasGroup _looseScreen;
     
     [SerializeField] private GameObject _startButton;
     [SerializeField] private GameObject _resumeButton;
@@ -18,6 +22,11 @@ public class MenuButtons : MonoBehaviour,
     [SerializeField] private Animator _stateDrivenCM;
     
     private static readonly int Main = Animator.StringToHash("Main");
+
+    private void Awake()
+    {
+        this.Subscribe<IGameActionInvokedListener, GameActionParams>();
+    }
 
     private void Update()
     {
@@ -31,6 +40,7 @@ public class MenuButtons : MonoBehaviour,
     private void OnDestroy()
     {
         this.Unsubscribe<ISessionStartedListener>();
+        this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
     }
 
     public void OnStartButtonClick()
@@ -94,5 +104,21 @@ public class MenuButtons : MonoBehaviour,
     {
         _gameHUD.alpha = 1;
         _storyLayer.alpha = 0;
+    }
+
+    void IObserver<IGameActionInvokedListener, GameActionParams>.Completed(GameActionParams parameters)
+    {
+        if (parameters.Action == GameAction.SheriffSavesGranny)
+        {
+            _winScreen.alpha = 1;
+            _gameHUD.alpha = 0;
+            Time.timeScale = 0;
+        } 
+        else if (parameters.Action == GameAction.GrannyHanged)
+        {
+            _looseScreen.alpha = 1;
+            _gameHUD.alpha = 0;
+            Time.timeScale = 0;
+        }
     }
 }
