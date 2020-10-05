@@ -1,16 +1,23 @@
-﻿using UnityEngine;
+﻿using Observable;
+using UnityEngine;
 using UnityEngine.Playables;
 
-public class MenuButtons : MonoBehaviour
+public class MenuButtons : MonoBehaviour,
+    ISessionStartedListener,
+    IObserverNotifyEmpty<ISessionStartedListener>
 {
     [SerializeField] private CanvasGroup _gameHUD;
     [SerializeField] private CanvasGroup _mainMenu;
     
     [SerializeField] private GameObject _startButton;
     [SerializeField] private GameObject _resumeButton;
+    [SerializeField] private GameObject _skipButton;
  
     [SerializeField] private PlayableDirector _introDirector;
+    [SerializeField] private Animator _stateDrivenCM;
     
+    private static readonly int Main = Animator.StringToHash("Main");
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -19,10 +26,18 @@ public class MenuButtons : MonoBehaviour
             Time.timeScale = 0;
         }
     }
-    
+
+    private void OnDestroy()
+    {
+        this.Unsubscribe<ISessionStartedListener>();
+    }
+
     public void OnStartButtonClick()
     {
-        ResumeGame();
+        this.Subscribe<ISessionStartedListener>();
+        
+        _mainMenu.alpha = 0;
+        Time.timeScale = 1;
         
         _introDirector.Play();
     }
@@ -35,6 +50,19 @@ public class MenuButtons : MonoBehaviour
     public void OnExitButtonClick()
     {
         Application.Quit();
+    }
+    
+    public void OnSkipButtonClick()
+    {
+        this.NotifyListeners<ISessionStartedListener>();
+        
+        _stateDrivenCM.SetTrigger(Main);
+
+        ResumeGame();
+
+        Camera.main.orthographic = true;
+        
+        _skipButton.SetActive(false);
     }
 
     private void PauseGame()
@@ -54,5 +82,10 @@ public class MenuButtons : MonoBehaviour
         _mainMenu.alpha = 0;
         
         Time.timeScale = 1;
+    }
+
+    void IObserver<ISessionStartedListener, EmptyParams>.Completed(EmptyParams parameters)
+    {
+        _gameHUD.alpha = 1;
     }
 }
