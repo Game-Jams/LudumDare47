@@ -2479,6 +2479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemName: {fileID: 8545609287465970044}
   _image: {fileID: 654863017091233362}
+  _inventory: {fileID: 7802429895794579600}
   _itemImages:
   - ItemType: 1
     Sprite: {fileID: 21300000, guid: 4d7dcea16fd5b8f488d954962778e916, type: 3}
