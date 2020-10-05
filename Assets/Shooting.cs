@@ -11,7 +11,7 @@ public class Shooting : MonoBehaviour
     
     public void ShootTarget()
     {
-        _targetAnimator.SetTrigger("Shooted");
+        _targetAnimator.SetBool("Shooted", true);
         
         foreach (ParticleSystem system in _systems)
         {
