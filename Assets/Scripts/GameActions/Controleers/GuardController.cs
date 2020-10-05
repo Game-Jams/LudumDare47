@@ -19,6 +19,8 @@ namespace GameActions
         private void Awake()
         {
             _director = GetComponent<PlayableDirector>();
+
+            this.Subscribe<IGameActionInvokedListener, GameActionParams>();
         }
 
         private void OnDestroy()

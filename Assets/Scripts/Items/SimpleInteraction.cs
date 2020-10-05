@@ -10,7 +10,7 @@ namespace Interactions
 
         protected override bool NeedActivation(PlayerInventory playerInventory)
         {
-            return _interaction.AlwaysIsInteract || _interaction.ItemForInteract == playerInventory.Item;
+            return (_interaction.AlwaysIsInteract || _interaction.ItemForInteract == playerInventory.Item) && enabled;
         }
 
         protected override bool HasCanInteract(PlayerInventory playerInventory)
