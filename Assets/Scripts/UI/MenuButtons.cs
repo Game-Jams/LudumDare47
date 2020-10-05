@@ -131,7 +131,7 @@ public class MenuButtons : MonoBehaviour,
 
             _winScreen.alpha = 0;
             _winScreen.interactable = false;
-            _looseScreen.blocksRaycasts = false;
+            _winScreen.blocksRaycasts = false;
 
             _gameHUD.alpha = 0;
             Time.timeScale = 0;
