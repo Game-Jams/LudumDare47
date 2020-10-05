@@ -96,8 +96,8 @@ public class MenuButtons : MonoBehaviour,
         _gameHUD.alpha = 1;
         _mainMenu.alpha = 0;
         _mainMenu.interactable = false;
-        _winScreen.interactable = true;
-        _looseScreen.interactable = true;
+        _winScreen.interactable = false;
+        _looseScreen.interactable = false;
         
         Time.timeScale = 1;
     }
