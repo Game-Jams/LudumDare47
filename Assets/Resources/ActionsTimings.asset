@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timings:
   - _gameAction: 7
-    _timeOfActivation: 20
-  - _gameAction: 8
-    _timeOfActivation: 5
+    _timeOfActivation: 33
+  - _gameAction: 9
+    _timeOfActivation: 23
   - _gameAction: 18
-    _timeOfActivation: 0
+    _timeOfActivation: 1
   - _gameAction: 14
-    _timeOfActivation: 6.15
+    _timeOfActivation: 30
