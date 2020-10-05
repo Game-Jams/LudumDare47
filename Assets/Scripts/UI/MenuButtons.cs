@@ -39,6 +39,8 @@ public class MenuButtons : MonoBehaviour,
         
         _mainMenu.alpha = 0;
         _storyLayer.alpha = 1;
+        _mainMenu.interactable = false;
+        
         Time.timeScale = 1;
         
         _introDirector.Play();
@@ -71,6 +73,7 @@ public class MenuButtons : MonoBehaviour,
     {
         _gameHUD.alpha = 0;
         _mainMenu.alpha = 1;
+        _mainMenu.interactable = true;
         
         _startButton.SetActive(false);
         _resumeButton.SetActive(true);
@@ -82,6 +85,7 @@ public class MenuButtons : MonoBehaviour,
     {
         _gameHUD.alpha = 1;
         _mainMenu.alpha = 0;
+        _mainMenu.interactable = false;
         
         Time.timeScale = 1;
     }
