@@ -1,5 +1,123 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1545554927144044266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3654379150057173833}
+  - component: {fileID: 3125655094034967791}
+  m_Layer: 0
+  m_Name: Lovers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3654379150057173833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545554927144044266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7552148209180412375}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &3125655094034967791
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545554927144044266}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: ae16bc0681b50ac4d94b3daff1a680b9, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 5550642918876334765, guid: ae16bc0681b50ac4d94b3daff1a680b9, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -7665264333925034461, guid: ae16bc0681b50ac4d94b3daff1a680b9, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -6641008925213105206, guid: ae16bc0681b50ac4d94b3daff1a680b9, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -87118835414182408, guid: ae16bc0681b50ac4d94b3daff1a680b9, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7706113463915819005, guid: ae16bc0681b50ac4d94b3daff1a680b9, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5748969618536859687, guid: ae16bc0681b50ac4d94b3daff1a680b9, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
+--- !u!1 &1555704519647133643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 612384983822409067}
+  - component: {fileID: 5834418704202452501}
+  m_Layer: 0
+  m_Name: Duel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &612384983822409067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555704519647133643}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7552148209180412375}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &5834418704202452501
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555704519647133643}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 222c1a2cd7cfe6b4882a7010dfbcf87a, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -4160358476786542455, guid: 222c1a2cd7cfe6b4882a7010dfbcf87a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4739980002146346515, guid: 222c1a2cd7cfe6b4882a7010dfbcf87a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5024078515239437444, guid: 222c1a2cd7cfe6b4882a7010dfbcf87a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 569142013335163540, guid: 222c1a2cd7cfe6b4882a7010dfbcf87a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -609490039729496751, guid: 222c1a2cd7cfe6b4882a7010dfbcf87a, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &7552148209180412374
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,6 +146,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7552148209267049759}
+  - {fileID: 612384983822409067}
+  - {fileID: 3654379150057173833}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

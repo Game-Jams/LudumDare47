@@ -8,6 +8,7 @@ public class MenuButtons : MonoBehaviour,
 {
     [SerializeField] private CanvasGroup _gameHUD;
     [SerializeField] private CanvasGroup _mainMenu;
+    [SerializeField] private CanvasGroup _storyLayer;
     
     [SerializeField] private GameObject _startButton;
     [SerializeField] private GameObject _resumeButton;
@@ -37,6 +38,7 @@ public class MenuButtons : MonoBehaviour,
         this.Subscribe<ISessionStartedListener>();
         
         _mainMenu.alpha = 0;
+        _storyLayer.alpha = 1;
         Time.timeScale = 1;
         
         _introDirector.Play();
@@ -87,5 +89,6 @@ public class MenuButtons : MonoBehaviour,
     void IObserver<ISessionStartedListener, EmptyParams>.Completed(EmptyParams parameters)
     {
         _gameHUD.alpha = 1;
+        _storyLayer.alpha = 0;
     }
 }

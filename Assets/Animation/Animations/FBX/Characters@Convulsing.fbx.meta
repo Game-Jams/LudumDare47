@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 9fd422365ca4f8d4db72b04cbf91f8ce
+guid: 10e5a8e23ae829548bc117496cfc2a7d
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Shooting Gun
+    second: Convulsing
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -19,7 +19,9 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
+      rotation in copied configuration does not match rotation in animation file:\n\t'Ball_L'
+      : rotation error = 1.573307 deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
@@ -39,18 +41,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Shooting Gun
+      name: Convulsing
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 127
+      lastFrame: 46
       wrapMode: 0
-      orientationOffsetY: -90
+      orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
