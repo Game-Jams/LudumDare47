@@ -13,6 +13,22 @@ namespace Interactions
 
         protected bool _inInteractiveZone;
 
+        private bool _isDisabled;
+
+        public bool IsDisabled
+        {
+            get => _isDisabled;
+            set
+            {
+                _isDisabled = value;
+
+                if (_isDisabled)
+                {
+                    SetActive(isActive: false);
+                }
+            }
+        }
+
         private void Awake()
         {
             SetActive(false);
@@ -20,7 +36,7 @@ namespace Interactions
 
         private void Update()
         {
-            if (_inInteractiveZone && HasCanInteract(_playerInventory) && Input.GetKeyDown(KeyCode.F))
+            if (!_isDisabled && _inInteractiveZone && HasCanInteract(_playerInventory) && Input.GetKeyDown(KeyCode.F))
             {
                 Interact();
             }
@@ -52,12 +68,12 @@ namespace Interactions
 
         protected void ChangeActiveState()
         {
-            SetActive(NeedActivation(_playerInventory));
+            SetActive(NeedActivation(_playerInventory) && !_isDisabled);
         }
 
         protected virtual void SetActive(bool isActive)
         {
-            _activityIndicator.SetActive(isActive);
+            _activityIndicator.SetActive(isActive && !_isDisabled);
         }
     }
 }

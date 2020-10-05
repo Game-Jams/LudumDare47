@@ -9,7 +9,10 @@ namespace Basis
         private void Start()
         {
             _cameraTransform = Camera.main.transform;
+        }
 
+        private void Update()
+        {
             transform.rotation = _cameraTransform.rotation;
         }
     }

@@ -23,14 +23,14 @@ namespace NPC
         private InteractionData[] Interactions => _npcInteractionData.Interactions;
 
         private InteractionData Interaction =>
-            Interactions.Length == _currentStateIndex ? default : Interactions[_currentStateIndex];
+            Interactions.Length <= _currentStateIndex ? default : Interactions[_currentStateIndex];
 
         protected override bool NeedActivation(PlayerInventory playerInventory)
         {
             bool alwaysActive = Interaction.AlwaysIsInteract;
             bool playerHasItem = Interaction.ItemForInteract == playerInventory.Item;
 
-            return alwaysActive || playerHasItem;
+            return (alwaysActive || playerHasItem) && !Interaction.Equals(default);
         }
 
         protected override bool HasCanInteract(PlayerInventory playerInventory)
@@ -51,7 +51,7 @@ namespace NPC
 
         protected override void SetActive(bool isActive)
         {
-            base.SetActive(isActive);
+            base.SetActive(isActive && !IsDisabled);
 
             UpdateDialog();
         }
@@ -73,7 +73,7 @@ namespace NPC
 
         private void UpdateDialog()
         {
-            bool dialogIsActive = Interaction.HasMessage && _inInteractiveZone;
+            bool dialogIsActive = _inInteractiveZone && Interaction.HasMessage && !IsDisabled;
 
             _dialogObject.SetActive(dialogIsActive);
 

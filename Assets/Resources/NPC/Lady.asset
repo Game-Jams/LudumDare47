@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55a598941c7c674e8c7cec971575709, type: 3}
+  m_Name: Lady
+  m_EditorClassIdentifier: 
+  _interactions:
+  - _interactionType: 3
+    _hasMessage: 1
+    _itemForInteract: 2
+    _hasItemForReceive: 1
+    _itemForReceive: 0
+    _message: Somebody stolen my purse! I'm lost! The train is about to leave, and
+      I don't have a penny to buy a ticket.
+  - _interactionType: 3
+    _hasMessage: 1
+    _itemForInteract: 5
+    _hasItemForReceive: 1
+    _itemForReceive: 3
+    _message: You just saved me! There are still gentlemen in the west! I have only
+      one thing to give you instead.
