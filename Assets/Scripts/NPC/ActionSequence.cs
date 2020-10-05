@@ -90,6 +90,12 @@ namespace NPC
 
         public void InvokeWrongAction()
         {
+            if (_wrongActionData.ActionType == 0)
+            {
+                Disable();
+                return;
+            }
+
             if (!_wrongActionPlanned)
             {
                 _wrongActionPlanned = true;
