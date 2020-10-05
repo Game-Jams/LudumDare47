@@ -22,17 +22,19 @@ namespace GameActions
 
         void IObserver<IGameActionInvokedListener, GameActionParams>.Completed(GameActionParams parameters)
         {
-            if (parameters.Action == GameAction.BanditShotSheriff) {
-                _bandit.SetTrigger("");
-
-                this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
-            }
-
-            if (parameters.Action == GameAction.BanditKilled)
+            switch (parameters.Action)
             {
-                _bandit.SetTrigger("");
+                case GameAction.BanditShotSheriff:
+                    _bandit.SetTrigger("Action");
 
-                this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
+                    this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
+                    break;
+                case GameAction.BanditKilled:
+                    this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
+                    break;
+                case GameAction.BanditArrived:
+                    _bandit.SetTrigger("Shoot");
+                    break;
             }
         }
     }

@@ -9,6 +9,7 @@ namespace NPC
 
         private NavMeshAgent _navAgent;
         private Transform _target;
+        private Animator _characterAnimator;
 
         public NpcMoveAction(GameObject owner, Transform target) : base(owner)
         {
@@ -20,6 +21,7 @@ namespace NPC
             Initialize();
 
             _navAgent.destination = _target.position;
+            _characterAnimator.SetBool("IsMoving", true);
         }
 
         public override void UpdateState()
@@ -27,11 +29,13 @@ namespace NPC
             if (!_navAgent.pathPending && _navAgent.remainingDistance <= StoppingDistance)
             {
                 EndAction();
+                _characterAnimator.SetBool("IsMoving", false);
             }
         }
 
         private void Initialize()
         {
+            _characterAnimator = _owner.transform.GetChild(0).GetComponent<Animator>();
             _navAgent = _owner.GetComponent<NavMeshAgent>();
         }
     }
