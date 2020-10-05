@@ -87,6 +87,14 @@ MonoBehaviour:
     roll: 0
   - position: {x: -43.20731, y: 144.46106, z: 111.29235}
     roll: 0
+  - position: {x: -43.20731, y: 144.46106, z: 111.29235}
+    roll: 0
+  - position: {x: -43.20731, y: 144.46106, z: 111.29235}
+    roll: 0
+  - position: {x: -43.20731, y: 144.46106, z: 111.29235}
+    roll: 0
+  - position: {x: -43.20731, y: 144.46106, z: 111.29235}
+    roll: 0
 --- !u!95 &8718001253088920735
 Animator:
   serializedVersion: 3
