@@ -51,19 +51,13 @@ namespace Player.Control
             {
                 return;
             }
-            
+
             _horizontal = Input.GetAxis(Horizontal);
             _vertical = Input.GetAxis(Vertical);
-            
-            if (Input.anyKey)
+
+            if ((_horizontal != 0 || _vertical != 0) && Input.anyKey)
             {
-                _horizontal = Input.GetAxis(Horizontal);
-                _vertical = Input.GetAxis(Vertical);
-                
-                if (_horizontal != 0 || _vertical != 0)
-                {
-                    Move();
-                }
+                Move();
             }
 
             if (_isMoving && _agent.remainingDistance < _animationStopDistance || _agent.isStopped)
