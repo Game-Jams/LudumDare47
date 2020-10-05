@@ -27,5 +27,6 @@
         BanditShotSheriff,
         GrannyHanged,
         SheriffStarted,
+        SheriffArrived
     }
 }
