@@ -116,6 +116,11 @@ public class MenuButtons : MonoBehaviour,
             _winScreen.interactable = true;
             _looseScreen.blocksRaycasts = true;
             _gameHUD.alpha = 0;
+
+            _looseScreen.alpha = 0;
+            _looseScreen.interactable = false;
+            _looseScreen.blocksRaycasts = false;
+
             Time.timeScale = 0;
         } 
         else if (parameters.Action == GameAction.GrannyHanged)
@@ -123,6 +128,11 @@ public class MenuButtons : MonoBehaviour,
             _looseScreen.alpha = 1;
             _looseScreen.interactable = true;
             _looseScreen.blocksRaycasts = true;
+
+            _winScreen.alpha = 0;
+            _winScreen.interactable = false;
+            _looseScreen.blocksRaycasts = false;
+
             _gameHUD.alpha = 0;
             Time.timeScale = 0;
         }
