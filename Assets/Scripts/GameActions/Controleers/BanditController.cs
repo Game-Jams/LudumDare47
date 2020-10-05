@@ -4,14 +4,14 @@ using UnityEngine.Playables;
 
 namespace GameActions
 {
-    [RequireComponent(typeof(PlayableDirector))]
-    public class LoversController : MonoBehaviour, IGameActionInvokedListener
+    [RequireComponent(typeof(Animator))]
+    public class BanditController : MonoBehaviour, IGameActionInvokedListener
     {
-        private PlayableDirector _director;
+        private Animator _bandit;
 
         private void Awake()
         {
-            _director = GetComponent<PlayableDirector>();
+            _bandit = GetComponent<Animator>();
 
             this.Subscribe<IGameActionInvokedListener, GameActionParams>();
         }
@@ -23,9 +23,9 @@ namespace GameActions
 
         void IObserver<IGameActionInvokedListener, GameActionParams>.Completed(GameActionParams parameters)
         {
-            if (parameters.Action == GameAction.RichGuySentToSaloon)
+            if (parameters.Action == GameAction.BanditKilled)
             {
-                _director.Play();
+                _bandit.SetTrigger("");
 
                 this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
             }

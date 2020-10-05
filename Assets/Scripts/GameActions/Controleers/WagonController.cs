@@ -16,7 +16,7 @@ namespace GameActions
             this.Subscribe<IGameActionInvokedListener, GameActionParams>();
         }
 
-        private void Destroy()
+        private void OnDestroy()
         {
             this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
         }

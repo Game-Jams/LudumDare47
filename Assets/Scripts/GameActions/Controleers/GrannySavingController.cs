@@ -5,7 +5,7 @@ using UnityEngine.Playables;
 namespace GameActions
 {
     [RequireComponent(typeof(PlayableDirector))]
-    public class LoversController : MonoBehaviour, IGameActionInvokedListener
+    public class GrannySavingController : MonoBehaviour, IGameActionInvokedListener
     {
         private PlayableDirector _director;
 
@@ -23,7 +23,7 @@ namespace GameActions
 
         void IObserver<IGameActionInvokedListener, GameActionParams>.Completed(GameActionParams parameters)
         {
-            if (parameters.Action == GameAction.RichGuySentToSaloon)
+            if (parameters.Action == GameAction.BanditKilled)
             {
                 _director.Play();
 
