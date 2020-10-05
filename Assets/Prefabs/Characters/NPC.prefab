@@ -444,6 +444,10 @@ PrefabInstance:
       propertyPath: m_WarningMessage
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1515068805903908385, guid: e3d9a5b7a19f9684d9b63308cdfa95bd, type: 3}
+      propertyPath: _systems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3d9a5b7a19f9684d9b63308cdfa95bd, type: 3}
 --- !u!4 &1397069027764898342 stripped

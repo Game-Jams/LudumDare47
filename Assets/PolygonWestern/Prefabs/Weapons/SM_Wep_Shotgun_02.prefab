@@ -10113,3 +10113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dd376af7dea8a48909ffbe1b2e2574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _targetAnimator: {fileID: 0}
+  _systems:
+  - {fileID: 3233462555649228879}
+  - {fileID: 2575176445373611342}

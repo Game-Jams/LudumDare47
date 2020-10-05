@@ -725,10 +725,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661985842226479962}
     m_Modifications:
+    - target: {fileID: 462486245498140267, guid: 357d2dc39aca3cc47b8557a4f2619daf, type: 3}
+      propertyPath: _systems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1313998477984902956, guid: 357d2dc39aca3cc47b8557a4f2619daf, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 6a378ff3b7106194aad1dd392bf9320b, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1398631767438768280, guid: 357d2dc39aca3cc47b8557a4f2619daf, type: 3}
       propertyPath: m_IsActive
       value: 0
