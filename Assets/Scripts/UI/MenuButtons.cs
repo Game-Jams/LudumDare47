@@ -96,6 +96,8 @@ public class MenuButtons : MonoBehaviour,
         _gameHUD.alpha = 1;
         _mainMenu.alpha = 0;
         _mainMenu.interactable = false;
+        _winScreen.interactable = true;
+        _looseScreen.interactable = true;
         
         Time.timeScale = 1;
     }
@@ -111,12 +113,14 @@ public class MenuButtons : MonoBehaviour,
         if (parameters.Action == GameAction.SheriffSavesGranny)
         {
             _winScreen.alpha = 1;
+            _winScreen.interactable = true;
             _gameHUD.alpha = 0;
             Time.timeScale = 0;
         } 
         else if (parameters.Action == GameAction.GrannyHanged)
         {
             _looseScreen.alpha = 1;
+            _looseScreen.interactable = true;
             _gameHUD.alpha = 0;
             Time.timeScale = 0;
         }
