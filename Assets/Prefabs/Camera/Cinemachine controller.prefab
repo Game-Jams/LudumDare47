@@ -30,8 +30,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8078360244113661016}
   - {fileID: 8078360243250148573}
+  - {fileID: 8078360244113661016}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -59,8 +59,8 @@ MonoBehaviour:
   m_LayerIndex: 0
   m_ShowDebugText: 0
   m_ChildCameras:
-  - {fileID: 8078360244113661019}
   - {fileID: 8078360243250148572}
+  - {fileID: 8078360244113661019}
   m_Instructions:
   - m_FullHash: 912603144
     m_VirtualCamera: {fileID: 8078360244113661019}
@@ -359,7 +359,7 @@ Transform:
   m_Children:
   - {fileID: 8078360243151345770}
   m_Father: {fileID: 4392841476119991841}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8078360243250148572
 MonoBehaviour:
@@ -445,7 +445,7 @@ Transform:
   m_Children:
   - {fileID: 8078360243199101694}
   m_Father: {fileID: 4392841476119991841}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8078360244113661019
 MonoBehaviour:
