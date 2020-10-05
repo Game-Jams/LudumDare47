@@ -18,6 +18,10 @@ MonoBehaviour:
   - _gameAction: 9
     _timeOfActivation: 23
   - _gameAction: 18
-    _timeOfActivation: 1
+    _timeOfActivation: 20
   - _gameAction: 14
     _timeOfActivation: 30
+  - _gameAction: 16
+    _timeOfActivation: 35
+  - _gameAction: 21
+    _timeOfActivation: 45
