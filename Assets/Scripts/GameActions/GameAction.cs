@@ -3,12 +3,26 @@
     public enum GameAction
     {
         None,
-        StagecoachRepaired,
-        StagecoachFinished,
-        RichGuyStated,
+        
+        ToolObtained,
+        MirrorObtained,
+        MoneyObtained,
+        RevolverObtained,
+        
+        AmmoWagonRepaired,
+        AmmoWagonArrived,
+        GuardDistracted,
+        
         RichGuySentToBarberShop,
-        RichGuySentToProstitute,
-        BanditStated,
-        SheriffStated,
+        RichGuySentToAttractiveWoman,
+        RichGuySentToSaloon,
+        
+        LadyGiveMirror,
+        
+        BanditKilled,
+        SheriffSavesGranny,
+        
+        BanditGoesToSheriff,
+        GrannyHanged,
     }
 }
