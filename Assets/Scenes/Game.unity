@@ -19720,17 +19720,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71943efd22748e145a464953ba074562, type: 3}
---- !u!114 &743865259 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6009130568473682060, guid: a6ff77e3d1e14be4ca6e67bb20fd1611, type: 3}
-  m_PrefabInstance: {fileID: 1349653728}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2865efcf9696214aaa0a81783b27595, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &749039578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40614,11 +40603,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6009130568473682060, guid: a6ff77e3d1e14be4ca6e67bb20fd1611, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6009130568473682061, guid: a6ff77e3d1e14be4ca6e67bb20fd1611, type: 3}
       propertyPath: m_Name
       value: Revolver
+      objectReference: {fileID: 0}
+    - target: {fileID: 6009130568473682061, guid: a6ff77e3d1e14be4ca6e67bb20fd1611, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6ff77e3d1e14be4ca6e67bb20fd1611, type: 3}
@@ -41885,6 +41878,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4867645178850748, guid: c933db8b77a3dbf41bbfbdf437dfaf8e, type: 3}
   m_PrefabInstance: {fileID: 1398822924}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1402527968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9042277418108159912, guid: 81eb488adeb0c474c9c8b9611840efb3, type: 3}
+  m_PrefabInstance: {fileID: 7552148209373494802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1402527969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402527968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f86020d4f450e4abcf6ff9b16a0e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1403044463 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8462201763814860282, guid: aaeebdd7ec366c540baf64c7f5a90df5, type: 3}
@@ -44562,6 +44572,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4753445397855558, guid: 14fe2334655920c41b766609db0e8e79, type: 3}
   m_PrefabInstance: {fileID: 1504433222}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1508451875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1461354727645488352, guid: 81eb488adeb0c474c9c8b9611840efb3, type: 3}
+  m_PrefabInstance: {fileID: 7552148209373494802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1508451876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508451875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96baf49b712c1e4181d2dddb3c40b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1508729646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66395,7 +66422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2173007339056255938, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000011687744
+      value: 0.00001169116
       objectReference: {fileID: 0}
     - target: {fileID: 2173007339056255938, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalRotation.y
@@ -66403,11 +66430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2173007339056255938, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0055551985
+      value: -0.005555213
       objectReference: {fileID: 0}
     - target: {fileID: 2173007339056255938, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.002104709
+      value: 0.0021047099
       objectReference: {fileID: 0}
     - target: {fileID: 2173007339056255938, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -66475,7 +66502,7 @@ PrefabInstance:
       objectReference: {fileID: 428654282}
     - target: {fileID: 7940984679778065748, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000011687744
+      value: 0.00001169116
       objectReference: {fileID: 0}
     - target: {fileID: 7940984679778065748, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalRotation.y
@@ -66483,27 +66510,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7940984679778065748, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.002104709
+      value: 0.0021047099
       objectReference: {fileID: 0}
     - target: {fileID: 7940984679778065748, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0055551985
+      value: -0.005555213
       objectReference: {fileID: 0}
     - target: {fileID: 7940984680506324433, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.04402613
+      value: 0.04402615
       objectReference: {fileID: 0}
     - target: {fileID: 7940984680506324433, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.92690855
+      value: 0.9269086
       objectReference: {fileID: 0}
     - target: {fileID: 7940984680506324433, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.115124755
+      value: 0.11512481
       objectReference: {fileID: 0}
     - target: {fileID: 7940984680506324433, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.35446936
+      value: -0.35446933
       objectReference: {fileID: 0}
     - target: {fileID: 7940984680506324433, guid: 472c3236269a0344b9ea60f7f5ace4a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -79829,4 +79856,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e10b6caf8a0274b8dabb2da6c6a6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _revolver: {fileID: 743865259}
+  _revolver: {fileID: 0}

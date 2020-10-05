@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: ActionsTimings
   m_EditorClassIdentifier: 
   _timings:
-  - _gameAction: 9
-    _timeOfActivation: 10
+  - _gameAction: 7
+    _timeOfActivation: 20
+  - _gameAction: 8
+    _timeOfActivation: 5
+  - _gameAction: 18
+    _timeOfActivation: 0
+  - _gameAction: 14
+    _timeOfActivation: 20
