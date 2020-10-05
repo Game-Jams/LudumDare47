@@ -1,20 +1,13 @@
-﻿using Interactions;
-using Observable;
+﻿using Observable;
 using UnityEngine;
 using UnityEngine.Playables;
 
-#pragma warning disable CS0649
 namespace GameActions
 {
     [RequireComponent(typeof(PlayableDirector))]
-    public class GuardController : MonoBehaviour, IGameActionInvokedListener
+    public class HangController : MonoBehaviour, IGameActionInvokedListener
     {
-        [SerializeField] private GameObject _revolver;
-
         private PlayableDirector _director;
-
-        private bool _wagonArrived;
-        private bool _richGuySentToBarberShop;
 
         private void Awake()
         {
@@ -32,15 +25,11 @@ namespace GameActions
         {
             switch (parameters.Action)
             {
-                case GameAction.RichGuySentToBarberShop:
-                    _richGuySentToBarberShop = true;
+                case GameAction.SheriffSavesGranny:
+                    this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
                     break;
-                case GameAction.AmmoWagonArrived:
-                    _wagonArrived = true;
-                    break;
-                case GameAction.GuardDistracted when _wagonArrived && _richGuySentToBarberShop:
+                case GameAction.GrannyHanged:
                     _director.Play();
-                    _revolver.SetActive(true);
 
                     this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
                     break;

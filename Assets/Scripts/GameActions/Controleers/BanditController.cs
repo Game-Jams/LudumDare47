@@ -22,6 +22,12 @@ namespace GameActions
 
         void IObserver<IGameActionInvokedListener, GameActionParams>.Completed(GameActionParams parameters)
         {
+            if (parameters.Action == GameAction.BanditShotSheriff) {
+                _bandit.SetTrigger("");
+
+                this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
+            }
+
             if (parameters.Action == GameAction.BanditKilled)
             {
                 _bandit.SetTrigger("");
