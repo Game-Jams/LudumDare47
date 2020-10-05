@@ -71,6 +71,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 5748969618536859687, guid: 184bf097ec303e9449315040c2e82f95, type: 2}
     value: {fileID: 0}
+  - key: {fileID: -2923231138360738916, guid: 184bf097ec303e9449315040c2e82f95, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &5817160698621884277
@@ -96,6 +98,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4740608703378096299}
   - component: {fileID: 2099993524204407067}
+  - component: {fileID: 1508451876}
+  - component: {fileID: 1508451879}
   m_Layer: 0
   m_Name: Granny saving
   m_TagString: Untagged
@@ -149,11 +153,53 @@ PlayableDirector:
   - key: {fileID: -5080652026187922532, guid: d546fd7335d57f7468f7c04fe28c4b2d, type: 2}
     value: {fileID: 0}
   - key: {fileID: 4463773943532283947, guid: d546fd7335d57f7468f7c04fe28c4b2d, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1508451879}
   - key: {fileID: 1285880425673948082, guid: d546fd7335d57f7468f7c04fe28c4b2d, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &1508451876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461354727645488352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96baf49b712c1e4181d2dddb3c40b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1508451879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461354727645488352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 6ff760f8c1a370646aed23289b9e8309, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1508451876}
+          m_TargetAssemblyTypeName: GameActions.GrannySavingController, Assembly-CSharp
+          m_MethodName: Win
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1545554927144044266
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3654379150057173833}
   - component: {fileID: 3125655094034967791}
+  - component: {fileID: 2047786366}
   m_Layer: 0
   m_Name: Lovers
   m_TagString: Untagged
@@ -212,8 +259,22 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 5748969618536859687, guid: ae16bc0681b50ac4d94b3daff1a680b9, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 6435713595213803370, guid: ae16bc0681b50ac4d94b3daff1a680b9, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &2047786366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545554927144044266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111394db8feba10439e54bbaffd946f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1555704519647133643
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7552148209267049759}
   - component: {fileID: 7552148209267049756}
+  - component: {fileID: 1717890099}
   m_Layer: 0
   m_Name: Ammo diligance
   m_TagString: Untagged
@@ -369,6 +431,18 @@ PlayableDirector:
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &1717890099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552148209267049758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc3989529d63cf439ea7e974eeed49e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9042277418108159912
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +453,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8505390748744335655}
   - component: {fileID: 1716698560039671723}
+  - component: {fileID: 1402527969}
+  - component: {fileID: 7207571967584193156}
   m_Layer: 0
   m_Name: Hang
   m_TagString: Untagged
@@ -422,6 +498,48 @@ PlayableDirector:
   - key: {fileID: 7326065065831994038, guid: 13a8ac8afc011b048bffcc8351498e49, type: 2}
     value: {fileID: 0}
   - key: {fileID: -3758992199072466218, guid: 13a8ac8afc011b048bffcc8351498e49, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 7207571967584193156}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &1402527969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9042277418108159912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f86020d4f450e4abcf6ff9b16a0e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7207571967584193156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9042277418108159912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 2f11902d6554bdd40a765c6da1485278, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1402527969}
+          m_TargetAssemblyTypeName: GameActions.HangController, Assembly-CSharp
+          m_MethodName: Lose
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

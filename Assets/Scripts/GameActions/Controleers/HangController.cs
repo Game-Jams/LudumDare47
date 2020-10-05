@@ -5,7 +5,8 @@ using UnityEngine.Playables;
 namespace GameActions
 {
     [RequireComponent(typeof(PlayableDirector))]
-    public class HangController : MonoBehaviour, IGameActionInvokedListener
+    public class HangController : MonoBehaviour, IGameActionInvokedListener,
+        IObserverNotify<IGameActionInvokedListener, GameActionParams>
     {
         private PlayableDirector _director;
 
@@ -28,12 +29,17 @@ namespace GameActions
                 case GameAction.SheriffSavesGranny:
                     this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
                     break;
-                case GameAction.GrannyHanged:
+                case GameAction.GrannyHangStart:
                     _director.Play();
 
                     this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
                     break;
             }
+        }
+
+        public void Lose()
+        {
+            this.NotifyListeners(new GameActionParams(GameAction.GrannyHanged));
         }
     }
 }
