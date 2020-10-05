@@ -8,6 +8,8 @@ namespace GameActions
     public class HangController : MonoBehaviour, IGameActionInvokedListener,
         IObserverNotify<IGameActionInvokedListener, GameActionParams>
     {
+        [SerializeField] private Animator _animator;
+        
         private PlayableDirector _director;
 
         private void Awake()
@@ -31,6 +33,7 @@ namespace GameActions
                     break;
                 case GameAction.GrannyHangStart:
                     _director.Play();
+                    _animator.runtimeAnimatorController = null;
 
                     this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
                     break;
