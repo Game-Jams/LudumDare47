@@ -88,6 +88,18 @@ MonoBehaviour:
     _hasItemForReceive: 1
     _itemForReceive: 0
     _message: 
+--- !u!114 &690929875251499413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297943401984896692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932fbbc12c4f81e4ba82dff1aff71047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &598515391082353965
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -871,6 +883,11 @@ PrefabInstance:
 --- !u!4 &6296085901241537850 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1399933145016196658, guid: 357d2dc39aca3cc47b8557a4f2619daf, type: 3}
+  m_PrefabInstance: {fileID: 4903785592558750472}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6297943401984896692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1399340907277821372, guid: 357d2dc39aca3cc47b8557a4f2619daf, type: 3}
   m_PrefabInstance: {fileID: 4903785592558750472}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5814831396199024657
