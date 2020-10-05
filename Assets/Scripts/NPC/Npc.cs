@@ -49,7 +49,6 @@ namespace NPC
             _state = NpcState.AlternativeAction;
 
             _npcInteraction.IsDisabled = true;
-            _actionSequence.InvokeRightAction();
         }
     }
 }

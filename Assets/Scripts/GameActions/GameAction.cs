@@ -22,7 +22,10 @@
         BanditKilled,
         SheriffSavesGranny,
         
-        BanditGoesToSheriff,
+        BanditStarted,
+        BanditArrived,
+        BanditShotSheriff,
         GrannyHanged,
+        SheriffStarted
     }
 }

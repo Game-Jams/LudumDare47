@@ -6,7 +6,8 @@ using Sirenix.OdinInspector;
 
 namespace NPC
 {
-    internal sealed class ActionSequence : MonoBehaviour, IGameActionInvokedListener
+    internal sealed class ActionSequence : MonoBehaviour, IGameActionInvokedListener, 
+        IObserverNotify<IGameActionInvokedListener, GameActionParams>
     {
         [Serializable]
         private struct GameActionData
@@ -77,6 +78,11 @@ namespace NPC
 
             _initializeAction.ActionEnded += () =>
             {
+                if (_initializeActionData.OnEndedEvent != 0)
+                {
+                    this.NotifyListeners(new GameActionParams(_initializeActionData.OnEndedEvent));
+                }
+                
                 Initialized?.Invoke();
             };
         }
@@ -91,6 +97,14 @@ namespace NPC
 
             _wrongAction = new NpcMoveAction(gameObject, _wrongActionData.Target);
             _wrongAction.StartAction();
+
+            _wrongAction.ActionEnded += () =>
+            {
+                if (_wrongActionData.OnEndedEvent != 0)
+                {
+                    this.NotifyListeners(new GameActionParams(_wrongActionData.OnEndedEvent));
+                }
+            };
         }
 
         public void InvokeRightAction()
@@ -103,6 +117,14 @@ namespace NPC
 
             _rightAction = new NpcMoveAction(gameObject, _rightActionData.Target);
             _rightAction.StartAction();
+
+            _rightAction.ActionEnded += () =>
+            {
+                if (_rightActionData.OnEndedEvent != 0)
+                {
+                    this.NotifyListeners(new GameActionParams(_rightActionData.OnEndedEvent));
+                }
+            };
         }
 
         private void InvokePlannedActions()
