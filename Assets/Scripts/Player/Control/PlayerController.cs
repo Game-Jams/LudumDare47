@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using Observable;
+using UnityEngine;
 using UnityEngine.AI;
 
 #pragma warning disable CS0649
 namespace Player.Control
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    internal sealed class PlayerController : MonoBehaviour
+    internal sealed class PlayerController : MonoBehaviour, ISessionStartedListener
     {
         private const string MoveBool = "IsMoving";
         private const string Horizontal = "Horizontal";
@@ -17,13 +18,24 @@ namespace Player.Control
         
         private Transform _transform;
         private NavMeshAgent _agent;
-
+        
+        private bool _isSessionStarted;
         private int _moveBool;
         private bool _isMoving;
 
         private float _horizontal;
         private float _vertical;
 
+        private void Awake()
+        {
+            this.Subscribe<ISessionStartedListener>();
+        }
+        
+        private void OnDestroy()
+        {
+            this.Unsubscribe<ISessionStartedListener>();
+        }
+        
         private void Start()
         {
             _agent = GetComponent<NavMeshAgent>();
@@ -35,6 +47,11 @@ namespace Player.Control
 
         private void Update()
         {
+            if (!_isSessionStarted)
+            {
+                return;
+            }
+            
             _horizontal = Input.GetAxis(Horizontal);
             _vertical = Input.GetAxis(Vertical);
             
@@ -67,6 +84,11 @@ namespace Player.Control
                 _isMoving = true;
                 _animator.SetBool(_moveBool, _isMoving);
             }
+        }
+
+        void IObserver<ISessionStartedListener, EmptyParams>.Completed(EmptyParams parameters)
+        {
+            _isSessionStarted = true;
         }
     }
 }

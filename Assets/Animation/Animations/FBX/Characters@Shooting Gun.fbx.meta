@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 8b4bac3fa7eb1bb48915a5d8011b3f35
+guid: 9fd422365ca4f8d4db72b04cbf91f8ce
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Leaning
+    second: Shooting Gun
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -19,14 +19,13 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
-      rotation in copied configuration does not match rotation in animation file:\n\t'Ball_L'
-      : rotation error = 1.018551 deg\n"
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'Ball_L' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n"
+      to improve retargeting quality.\n\t'Ball_R' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Ball_L' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -40,19 +39,19 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Leaning
+      name: Shooting Gun
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 80
+      lastFrame: 127
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -90
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
+      loopTime: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
