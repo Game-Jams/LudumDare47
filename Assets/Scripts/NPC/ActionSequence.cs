@@ -80,6 +80,7 @@ namespace NPC
             {
                 if (_initializeActionData.OnEndedEvent != 0)
                 {
+                    Debug.Log(_initializeActionData.OnEndedEvent);
                     this.NotifyListeners(new GameActionParams(_initializeActionData.OnEndedEvent));
                 }
                 
@@ -102,6 +103,7 @@ namespace NPC
             {
                 if (_wrongActionData.OnEndedEvent != 0)
                 {
+                    Debug.Log(_wrongActionData.OnEndedEvent);
                     this.NotifyListeners(new GameActionParams(_wrongActionData.OnEndedEvent));
                 }
             };
@@ -122,6 +124,7 @@ namespace NPC
             {
                 if (_rightActionData.OnEndedEvent != 0)
                 {
+                    Debug.Log(_rightActionData.OnEndedEvent);
                     this.NotifyListeners(new GameActionParams(_rightActionData.OnEndedEvent));
                 }
             };

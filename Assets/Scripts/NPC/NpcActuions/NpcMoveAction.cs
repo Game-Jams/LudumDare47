@@ -11,6 +11,8 @@ namespace NPC
         private Transform _target;
         private Animator _characterAnimator;
 
+        private bool _isEnded;
+
         public NpcMoveAction(GameObject owner, Transform target) : base(owner)
         {
             _target = target;
@@ -26,9 +28,10 @@ namespace NPC
 
         public override void UpdateState()
         {
-            if (!_navAgent.pathPending && _navAgent.remainingDistance <= StoppingDistance)
+            if (!_navAgent.pathPending && _navAgent.remainingDistance <= StoppingDistance && !_isEnded)
             {
                 EndAction();
+                _isEnded = true;
                 _characterAnimator.SetBool("IsMoving", false);
             }
         }

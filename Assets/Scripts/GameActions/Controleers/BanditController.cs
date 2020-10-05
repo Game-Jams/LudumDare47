@@ -25,7 +25,7 @@ namespace GameActions
             switch (parameters.Action)
             {
                 case GameAction.BanditShotSheriff:
-                    _bandit.SetTrigger("Action");
+                    _bandit.SetTrigger("Shoot");
 
                     this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
                     break;
@@ -33,7 +33,7 @@ namespace GameActions
                     this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
                     break;
                 case GameAction.BanditArrived:
-                    _bandit.SetTrigger("Shoot");
+                    _bandit.SetTrigger("Action");
                     break;
             }
         }
