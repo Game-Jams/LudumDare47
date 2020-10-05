@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a4d3651f0cede4fa3e6408f1440da3, type: 3}
   m_Name: ActionsTimings
   m_EditorClassIdentifier: 
-  _timings: []
+  _timings:
+  - _gameAction: 9
+    _timeOfActivation: 10
