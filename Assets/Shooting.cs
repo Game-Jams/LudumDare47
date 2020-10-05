@@ -12,6 +12,9 @@ public class Shooting : MonoBehaviour
     public void ShootTarget()
     {
         _targetAnimator.SetBool("Shooted", true);
+
+        _targetAnimator.transform.rotation =
+            Quaternion.LookRotation(transform.position - _targetAnimator.transform.position, Vector3.up);
         
         foreach (ParticleSystem system in _systems)
         {
