@@ -23,6 +23,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadSceneAsync(1);
     }
 
+    public void ReloadGame()
+    {
+        StartCoroutine(ReloadGameScene());
+    }
+    
     public IEnumerator ReloadGameScene()
     {
         yield return SceneManager.UnloadSceneAsync(1);

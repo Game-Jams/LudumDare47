@@ -140,6 +140,6 @@ public class MenuButtons : MonoBehaviour,
 
     public void ReloadGame()
     {
-        SceneLoader.Instance.ReloadGameScene();
+        SceneLoader.Instance.ReloadGame();
     }
 }
