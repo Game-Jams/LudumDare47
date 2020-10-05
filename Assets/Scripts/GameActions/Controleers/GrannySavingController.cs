@@ -5,7 +5,8 @@ using UnityEngine.Playables;
 namespace GameActions
 {
     [RequireComponent(typeof(PlayableDirector))]
-    public class GrannySavingController : MonoBehaviour, IGameActionInvokedListener
+    public class GrannySavingController : MonoBehaviour, IGameActionInvokedListener, 
+        IObserverNotify<IGameActionInvokedListener,GameActionParams>
     {
         private PlayableDirector _director;
 
@@ -29,6 +30,11 @@ namespace GameActions
 
                 this.Unsubscribe<IGameActionInvokedListener, GameActionParams>();
             }
+        }
+
+        public void Win()
+        {
+            this.NotifyListeners(new GameActionParams(GameAction.SheriffSavesGranny));
         }
     }
 }

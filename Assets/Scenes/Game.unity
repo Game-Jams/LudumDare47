@@ -44685,6 +44685,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96baf49b712c1e4181d2dddb3c40b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1508451879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508451875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 6ff760f8c1a370646aed23289b9e8309, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1508451876}
+          m_TargetAssemblyTypeName: GameActions.GrannySavingController, Assembly-CSharp
+          m_MethodName: Win
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1508729646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79904,6 +79934,10 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[9].value
       value: 
       objectReference: {fileID: 2173007339325571033}
+    - target: {fileID: 2099993524204407067, guid: 81eb488adeb0c474c9c8b9611840efb3, type: 3}
+      propertyPath: m_SceneBindings.Array.data[8].value
+      value: 
+      objectReference: {fileID: 1508451879}
     - target: {fileID: 3125655094034967791, guid: 81eb488adeb0c474c9c8b9611840efb3, type: 3}
       propertyPath: m_SceneBindings.Array.size
       value: 7
