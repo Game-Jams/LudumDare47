@@ -1,7 +1,9 @@
-﻿using Player.Control;
+﻿using GameActions;
+using Observable;
 using UnityEngine;
+using PlayerController = Player.Control.PlayerController;
 
-public class Shooting : MonoBehaviour
+public class Shooting : MonoBehaviour, IObserverNotify<IGameActionInvokedListener, GameActionParams>
 {
     [SerializeField] private PlayerController _controller;
     
@@ -31,4 +33,9 @@ public class Shooting : MonoBehaviour
     {
         _controller.enabled = true; 
     }
+
+    public void TriggerGrannySave()
+    {
+      this.NotifyListeners<IGameActionInvokedListener, GameActionParams>(new GameActionParams(GameAction.BanditKilled));  
+    } 
 }

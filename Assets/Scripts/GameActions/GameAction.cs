@@ -18,7 +18,7 @@
         RichGuySentToSaloon,
         
         LadyGiveMirror,
-        
+       
         BanditKilled,
         SheriffSavesGranny,
         
@@ -27,6 +27,7 @@
         BanditShotSheriff,
         GrannyHanged,
         SheriffStarted,
-        SheriffArrived
+        SheriffArrived,
+        PlayerAimingBandit,
     }
 }
