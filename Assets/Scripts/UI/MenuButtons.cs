@@ -114,6 +114,7 @@ public class MenuButtons : MonoBehaviour,
         {
             _winScreen.alpha = 1;
             _winScreen.interactable = true;
+            _looseScreen.blocksRaycasts = true;
             _gameHUD.alpha = 0;
             Time.timeScale = 0;
         } 
@@ -121,8 +122,14 @@ public class MenuButtons : MonoBehaviour,
         {
             _looseScreen.alpha = 1;
             _looseScreen.interactable = true;
+            _looseScreen.blocksRaycasts = true;
             _gameHUD.alpha = 0;
             Time.timeScale = 0;
         }
+    }
+
+    public void ReloadGame()
+    {
+        SceneLoader.Instance.ReloadGameScene();
     }
 }

@@ -29,5 +29,6 @@
         SheriffStarted,
         SheriffArrived,
         PlayerAimingBandit,
+        GrannyHangStart,
     }
 }
