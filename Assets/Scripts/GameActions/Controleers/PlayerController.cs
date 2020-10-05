@@ -21,7 +21,7 @@ namespace GameActions
 
         void IObserver<IGameActionInvokedListener, GameActionParams>.Completed(GameActionParams parameters)
         {
-            if (parameters.Action == GameAction.BanditKilled)
+            if (parameters.Action == GameAction.PlayerAimingBandit)
             {
                 _playerAnimator.SetTrigger("Shoot");
             }
