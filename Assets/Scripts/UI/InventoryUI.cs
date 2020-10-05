@@ -20,6 +20,7 @@ namespace UI
 
         [SerializeField] private TextMeshProUGUI _itemName;
         [SerializeField] private Image _image;
+        [SerializeField] private GameObject _inventory;
 
         [SerializeField] private ItemImage[] _itemImages;
 
@@ -42,6 +43,8 @@ namespace UI
 
         private void SetItem(ItemType itemType)
         {
+            _inventory.SetActive(itemType != 0);
+
             _itemName.text = itemType.ToString();
 
             _image.sprite = _itemImages.First(item => item.ItemType == itemType).Sprite;
