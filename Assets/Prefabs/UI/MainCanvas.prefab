@@ -3006,9 +3006,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Created by ResideR, Anrewqa, bulleet, spok.98
-
-'
+  m_text: Created by ResideR, Anrewqa, bulleet, tragacheyskiy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d54e4a2285bc498419835b473f663013, type: 2}
   m_sharedMaterial: {fileID: 7208073330939873632, guid: d54e4a2285bc498419835b473f663013, type: 2}
