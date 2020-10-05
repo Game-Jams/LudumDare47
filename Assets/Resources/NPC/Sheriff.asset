@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f55a598941c7c674e8c7cec971575709, type: 3}
   m_Name: Sheriff
   m_EditorClassIdentifier: 
+  _assignGameAction: 0
   _interactions:
   - _interactionType: 3
     _hasMessage: 1
     _itemForInteract: 5
     _hasItemForReceive: 0
     _itemForReceive: 0
-    _message: Don't waste my time! I need to stop this madness!
+    _message: don't waste my time! i need to stop this madness!

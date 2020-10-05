@@ -19,10 +19,10 @@ MonoBehaviour:
     _itemForInteract: 3
     _hasItemForReceive: 1
     _itemForReceive: 0
-    _message: Whiskey or woman, what do you think? Nah, I'd like to have both!
+    _message: whiskey or woman, what do you think? nah, i'd like to have both!
   - _interactionType: 3
     _hasMessage: 1
     _itemForInteract: 5
     _hasItemForReceive: 0
     _itemForReceive: 0
-    _message: Dear Lord! I look like a vagabond. Luckily I know how to fix it.
+    _message: dear lord! I look like a vagabond. luckily i know how to fix it.

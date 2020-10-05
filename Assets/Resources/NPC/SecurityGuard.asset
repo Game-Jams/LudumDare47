@@ -19,12 +19,12 @@ MonoBehaviour:
     _itemForInteract: 1
     _hasItemForReceive: 1
     _itemForReceive: 0
-    _message: You never know when the damn shit happens, do you? If only I could
+    _message: you never know when the damn shit happens, do you? if only i could
       leave the wagon to see how to make things right...
   - _interactionType: 3
     _hasMessage: 1
     _itemForInteract: 5
     _hasItemForReceive: 1
     _itemForReceive: 2
-    _message: Well, I suppose you've earn some tippery. I'd like to rattle my hocks,
-      if I expect to arrive in time.
+    _message: well, i suppose you've earn some tippery. i'd like to rattle my hocks,
+      if i expect to arrive in time.

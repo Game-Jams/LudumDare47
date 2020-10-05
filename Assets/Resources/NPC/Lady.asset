@@ -19,12 +19,12 @@ MonoBehaviour:
     _itemForInteract: 2
     _hasItemForReceive: 1
     _itemForReceive: 0
-    _message: Somebody stolen my purse! I'm lost! The train is about to leave, and
-      I don't have a penny to buy a ticket.
+    _message: somebody stolen my purse! i'm lost! the train is about to leave, and
+      i don't have a penny to buy a ticket.
   - _interactionType: 3
     _hasMessage: 1
     _itemForInteract: 5
     _hasItemForReceive: 1
     _itemForReceive: 3
-    _message: You just saved me! There are still gentlemen in the west! I have only
+    _message: you just saved me! there are still gentlemen in the west! i have only
       one thing to give you instead.
