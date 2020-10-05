@@ -1,6 +1,7 @@
 ﻿using GameActions;
 using Observable;
 using UnityEngine;
+using UnityEngine.AI;
 using PlayerController = Player.Control.PlayerController;
 
 public class Shooting : MonoBehaviour, IObserverNotify<IGameActionInvokedListener, GameActionParams>
@@ -15,11 +16,11 @@ public class Shooting : MonoBehaviour, IObserverNotify<IGameActionInvokedListene
     {
         _targetAnimator.SetBool("Shooted", true);
 
-        _targetAnimator.transform.rotation =
-            Quaternion.LookRotation(transform.position - _targetAnimator.transform.position, Vector3.up);
-        
-        transform.rotation =
-            Quaternion.LookRotation(_targetAnimator.transform.position - transform.position, Vector3.up);
+        Transform target = _targetAnimator.gameObject.GetComponentInParent<NavMeshAgent>().transform;
+
+        target.rotation = Quaternion.FromToRotation(target.position, transform.position);
+
+        GetComponentInParent<NavMeshAgent>().transform.rotation = Quaternion.FromToRotation(transform.position, target.position);
         
         foreach (ParticleSystem system in _systems)
         {

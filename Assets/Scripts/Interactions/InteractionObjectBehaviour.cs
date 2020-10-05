@@ -42,7 +42,7 @@ namespace Interactions
             }
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerStay(Collider other)
         {
             if (other.TryGetComponent(out PlayerInventory playerInventory))
             {
