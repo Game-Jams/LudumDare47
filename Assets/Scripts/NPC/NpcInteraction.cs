@@ -1,5 +1,7 @@
 ﻿using System;
+using GameActions;
 using Interactions;
+using Observable;
 using Player;
 using TMPro;
 using UnityEngine;
@@ -7,7 +9,8 @@ using UnityEngine;
 #pragma warning disable CS0649
 namespace NPC
 {
-    internal sealed class NpcInteraction : InteractionObjectBehaviour
+    internal sealed class NpcInteraction : InteractionObjectBehaviour, 
+        IObserverNotify<IGameActionInvokedListener, GameActionParams>
     {
         public event Action InteractionEnded;
 
@@ -89,6 +92,11 @@ namespace NPC
 
             if (_currentStateIndex == Interactions.Length)
             {
+                if (_npcInteractionData.Action != GameAction.None)
+                {
+                    this.NotifyListeners<IGameActionInvokedListener, GameActionParams>(new GameActionParams(_npcInteractionData.Action));
+                }
+
                 InteractionEnded?.Invoke();
             }
         }

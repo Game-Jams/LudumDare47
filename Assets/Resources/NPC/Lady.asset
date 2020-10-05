@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f55a598941c7c674e8c7cec971575709, type: 3}
   m_Name: Lady
   m_EditorClassIdentifier: 
+  _assignGameAction: 11
   _interactions:
   - _interactionType: 3
     _hasMessage: 1
